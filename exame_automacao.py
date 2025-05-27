@@ -65,14 +65,7 @@ FOLDER_IDS = {
 }
 # ========================================================= #
 
-def get_drive_service():
-    """Autentica e devolve serviço do Google Drive."""
-    creds = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES
-    )
-    return build("drive", "v3", credentials=creds)
-
-def upload_to_drive(service, file_bytes, filename, mimetype, folder_id):
+dedef upload_to_drive(service, file_bytes, filename, mimetype, folder_id):
     """Faz upload para o Google Drive e retorna o link público."""
     file_metadata = {"name": filename, "parents": [folder_id]}
     media = MediaIoBaseUpload(file_bytes, mimetype=mimetype, resumable=True)
