@@ -65,7 +65,7 @@ FOLDER_IDS = {
 }
 # ========================================================= #
 
-dedef upload_to_drive(service, file_bytes, filename, mimetype, folder_id):
+def upload_to_drive(service, file_bytes, filename, mimetype, folder_id):
     """Faz upload para o Google Drive e retorna o link público."""
     file_metadata = {"name": filename, "parents": [folder_id]}
     media = MediaIoBaseUpload(file_bytes, mimetype=mimetype, resumable=True)
