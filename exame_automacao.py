@@ -50,14 +50,14 @@ def get_drive_service():
         creds_dict, scopes=SCOPES
     )
     return build("drive", "v3", credentials=credentials)
-auth/drive"]
+
 
 # 3) IDs das pastas no Google Drive (crie-as antes e coloque os IDs)
 FOLDER_IDS = {
     "OCT": "PASTA_ID_OCT",
     "Pentacam": "PASTA_ID_PENTACAM",
     "Retinografia": "PASTA_ID_RETINOGRAFIA",
-    "Campo Visual": "PASTA_ID_CAMPO_VISUAL",
+   "Campo Visual": "PASTA_ID_CAMPO_VISUAL",
     "Ecografia": "PASTA_ID_ECOGRAFIA",
     "Exame Olho Seco CSO Antares": "PASTA_ID_ANTARES",
     "Mapa Epitelial": "PASTA_ID_MAPA_EPITELIAL",
