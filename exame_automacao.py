@@ -22,7 +22,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY", "SUA_CHAVE_OPENAI_AQUI")
 
 # 2) Arquivo de credenciais de serviço do Google
 SERVICE_ACCOUNT_FILE = "service_account.json"
-SCOPES = ["https://www.googleapis.com/
+SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 import json
 
