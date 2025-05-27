@@ -22,7 +22,35 @@ openai.api_key = os.getenv("OPENAI_API_KEY", "SUA_CHAVE_OPENAI_AQUI")
 
 # 2) Arquivo de credenciais de serviço do Google
 SERVICE_ACCOUNT_FILE = "service_account.json"
-SCOPES = ["https://www.googleapis.com/auth/drive"]
+SCOPES = ["https://www.googleapis.com/
+
+import json
+
+def get_drive_service():
+    """
+    Autentica e retorna o serviço do Google Drive usando o JSON armazenado em
+    st.secrets['GOOGLE_SERVICE_ACCOUNT_INFO'] ou variável de ambiente
+    GOOGLE_SERVICE_ACCOUNT_INFO.
+    """
+    import streamlit as st
+    from google.oauth2 import service_account
+    from googleapiclient.discovery import build
+
+    if "GOOGLE_SERVICE_ACCOUNT_INFO" in st.secrets:
+        info = st.secrets["GOOGLE_SERVICE_ACCOUNT_INFO"]
+    else:
+        info = os.environ.get("GOOGLE_SERVICE_ACCOUNT_INFO")
+
+    if not info:
+        st.error("Credenciais do Google Drive não encontradas. Configure GOOGLE_SERVICE_ACCOUNT_INFO em Secrets.")
+        st.stop()
+
+    creds_dict = json.loads(info)
+    credentials = service_account.Credentials.from_service_account_info(
+        creds_dict, scopes=SCOPES
+    )
+    return build("drive", "v3", credentials=credentials)
+auth/drive"]
 
 # 3) IDs das pastas no Google Drive (crie-as antes e coloque os IDs)
 FOLDER_IDS = {
