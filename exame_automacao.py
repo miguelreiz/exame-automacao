@@ -24,6 +24,18 @@ openai.api_key = os.getenv("OPENAI_API_KEY", "SUA_CHAVE_OPENAI_AQUI")
 SERVICE_ACCOUNT_FILE = "service_account.json"
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 
+FOLDER_IDS = {
+    "OCT": "19C5JridCojNQZvWphsBimU5CNrTcPEEc",
+    "Pentacam": "1EDk5Mm7rjrvgXd4Opoped-WC2AGUQxVR",
+    "Retinography": "1QGmtjSNZ_rmDWVgnvberUzC2M4AMpuYD",
+    "Visual Field": "1bvOnEF9LiJ8vnZXxZNJB_gKos6sJ7CPM",
+    "Ultrasound": "1f0UeaKzGKRvqTa3urvkfIGFYFBJsMXtC",
+    "Dry Eye Test CSO Antares": "1VvfDKV_B5JKySOengQ_2ztfArp0K7KBw",
+    "Epithelial Map": "1RoQkDwtoXAE2mG1ECnx67QrVYX3DIIlh",
+    "VX130": "1xeEiUfrq3J8MCsi-AYv5CYzEBJyjptfx"
+}
+
+
 import json
 
 def get_drive_service():
